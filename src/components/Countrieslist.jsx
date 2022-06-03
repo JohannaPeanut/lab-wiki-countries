@@ -1,16 +1,17 @@
-import { useEffect, useState } from 'react'
-import countries from './../countries.json'
+import {Link} from 'react-router-dom'
 
-const Countrieslist = () => {
-    const countriesWithId = countries.forEach((country) => country.id=Math.random())
-    const [ countryArray, setCountries ] = useState(countriesWithId)
-
+const Countrieslist = (props) => {
+    
   return (
     <div>
         <h1>Countrieslist</h1>
+        
         <ul>
-            {countryArray && 
-            (countryArray.map((country)=> <li key="country.id">{country.name}</li>))}
+        {props.list.map((element)=> <li key={element.id}>
+          <Link to={`/country/${element.alpha3Code}`}>
+           {element.name.common}
+          </Link>
+            </li> )}
         </ul>
     </div>
   )
