@@ -7,11 +7,12 @@ const Countrieslist = (props) => {
         <h1>Countrieslist</h1>
         
         <ul>
-        {props.list.map((element)=> <li key={element.id}>
+        {props.list && 
+          (props.list.map((element)=> <li key={element.id}>
           <Link to={`/country/${element.alpha3Code}`}>
            {element.name.common}
           </Link>
-            </li> )}
+            </li> ))}
         </ul>
     </div>
   )

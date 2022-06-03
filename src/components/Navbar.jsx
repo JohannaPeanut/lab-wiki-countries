@@ -5,11 +5,11 @@ const Navbar = () => {
 
   return (
     <div>
-        <BrowserRouter>
-        <nav>
-            <Link to="/">LAB - Wikicountries</Link>
-        </nav>   
-        </BrowserRouter>
+      <BrowserRouter>
+          <nav>
+             <Link to={"/"}>LAB - Wikicountries</Link>
+         </nav>   
+      </BrowserRouter>
     </div>
   )
 }
